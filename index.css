@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: calc(100vh - 90px);
 }
 header {
     display: flex;
@@ -10,14 +12,15 @@ header {
     background-color: #6e83df;
     height: 70px;
 }
-
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 .sidenav {
     height: 100%; 
     width: 160px;
-    position: fixed; 
     z-index: 1;
-    top: 70px; 
-    left: 0;
     background-color: rgb(66, 77, 238); 
     overflow-x: hidden;
     padding-top: 20px;
@@ -25,7 +28,7 @@ header {
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     color: #070404;
     display: block;
     cursor: pointer;
@@ -33,7 +36,33 @@ header {
 .sidenav a:hover {
     color: #f1f1f1;
 }
+
+.sidenav.show {
+    display: block;
+}
+
 .main {
-    margin-left: 160px; 
+    width: 100%;
     padding: 0px 10px;
+}
+.main img {
+    max-height: 185px;
+}
+
+#menu-btn img {
+    height: 20px;
+}
+
+#menu-btn {
+    display:none;
+}
+
+@media screen and (max-width: 480px) {
+    .sidenav {
+        display:none;
+    }
+    #menu-btn {
+        display: block;
+        margin-right: 10px;
+    }
 }
